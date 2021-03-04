@@ -1,0 +1,17 @@
+#docker-build-master:
+#  image: docker:latest
+#  stage: build
+#  services:
+#    - docker:dind
+#  before_script:
+#    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+#  script:
+#    - docker build --pull -t app_image .
+#    # Login to GitLab Registry
+#   - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+#    # Tag and push to GitLab Registry
+#    - docker tag app_image $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
+#    - docker push $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
+#    - echo $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_BUILD_REF
+#  only:
+#    - master
