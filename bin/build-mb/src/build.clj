@@ -10,7 +10,6 @@
 (defn- build-translation-resources!
   []
   (u/step "Build translation resources"
-    (java/check-java-8)
     (u/sh {:dir u/project-root-directory} "./bin/i18n/build-translation-resources")
     (u/announce "Translation resources built successfully.")))
 
